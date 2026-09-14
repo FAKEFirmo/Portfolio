@@ -1,27 +1,20 @@
 import GlassOptics from './glass-optics';
 import { profile } from './content';
-import {
-  Work,
-  Capabilities,
-  Credentials,
-  Trajectory,
-  About,
-  Contact,
-} from './sections';
+import { Work, Credentials, About, Contact } from './sections';
 import Motion from './motion';
 export default function Home() {
   return (
     <main>
       <GlassOptics />
       <a className="skip" href="#work">
-        Skip to work
+        Skip to studies
       </a>
       <header className="header">
         <a className="wordmark" href="#home" aria-label="Portfolio home">
           p<span>・</span>
         </a>
         <nav aria-label="Main navigation">
-          <a href="#work">Work</a>
+          <a href="#education">Studies</a>
           <a href="#about">About</a>
           <a href="#contact">
             Contact <span>↗</span>
@@ -33,7 +26,7 @@ export default function Home() {
         <div className="hero-art" />
         <div className="hero-content">
           <p className="eyebrow">
-            <span className="tiny-cross">+</span> AN INDEPENDENT PERSPECTIVE
+            <span className="tiny-cross">+</span> POLITECNICO DI MILANO
           </p>
           <h1>
             {profile.name}
@@ -44,14 +37,14 @@ export default function Home() {
           <p className="hero-role">{profile.role}</p>
           <p className="hero-intro">{profile.introduction}</p>
           <a className="glass hero-button" href="#work">
-            Explore selected work <span>↘</span>
+            Follow my journey <span>↘</span>
           </a>
         </div>
         <div className="hero-note glass">
           <span className="status-dot" />
           PORTFOLIO IN PROGRESS
           <span className="note-line">
-            A little curiosity. A lot of possibility.
+            Engineering student. At the beginning.
           </span>
         </div>
         <div className="hero-bottom">
@@ -59,13 +52,11 @@ export default function Home() {
           <a href="#work">
             SCROLL TO EXPLORE <span>↓</span>
           </a>
-          <span>01 — 08</span>
+          <span>01 — 05</span>
         </div>
       </section>
-      <Work />
-      <Capabilities />
       <Credentials />
-      <Trajectory />
+      <Work />
       <About />
       <Contact />
       <Motion />

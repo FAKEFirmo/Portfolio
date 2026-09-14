@@ -947,3 +947,25 @@ footer {
     transform: none;
   }
 }
+.student-work .work-heading {
+  margin-top: 40px;
+}
+.student-work .section-description {
+  max-width: 365px;
+}
+.student-work {
+  border-top: 1px solid #292927;
+  padding-top: 75px;
+  padding-bottom: 85px;
+}
+@media (max-width: 760px) {
+  #education .education-row {
+    flex-wrap: wrap;
+  }
+  #education .education-row .pending {
+    margin-left: 38px;
+  }
+  .student-work .work-heading {
+    margin-top: 30px;
+  }
+}

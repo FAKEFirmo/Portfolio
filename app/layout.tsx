@@ -6,7 +6,7 @@ const mono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Portfolio — A work in progress',
   description:
-    'Selected work, capabilities, and the story behind the work. A personal portfolio in development.',
+    'Engineering student at Politecnico di Milano. A personal portfolio growing alongside my studies.',
 };
 export default function RootLayout({
   children,

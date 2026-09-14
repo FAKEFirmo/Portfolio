@@ -1,10 +1,10 @@
 export const profile = {
-  name: 'Your name',
-  role: 'Your discipline. Your perspective.',
+  name: 'Federico Firmani',
+  role: 'Engineering student / Politecnico di Milano',
   introduction:
-    'A space for the things I build, the ideas I explore, and everything in between.',
-  email: '',
-  github: '',
+    'Currently studying engineering at Politecnico di Milano. This is the beginning of my portfolio, with room to grow alongside my studies.',
+  email: 'fedefirmo.exe@gmail.com',
+  github: 'https://github.com/FAKEFirmo',
   linkedin: '',
   cv: '',
 };

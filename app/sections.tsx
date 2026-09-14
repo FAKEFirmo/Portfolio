@@ -1,4 +1,4 @@
-import { profile, projects, capabilities } from './content';
+import { profile, capabilities } from './content';
 export function SectionLabel({
   number,
   children,
@@ -14,76 +14,18 @@ export function SectionLabel({
 }
 export function Work() {
   return (
-    <section className="section work" id="work">
-      <div className="section-top">
-        <SectionLabel number="01">SELECTED WORK</SectionLabel>
-        <span className="micro">A CLOSER LOOK</span>
-      </div>
+    <section className="section work student-work" id="work">
+      <SectionLabel number="02">LEARNING / EXPLORATION</SectionLabel>
       <div className="work-heading">
         <h2>
-          Things made.
+          At the beginning.
           <br />
-          <span className="muted">Ideas explored.</span>
+          <span className="muted">Room to grow.</span>
         </h2>
         <p className="section-description">
-          A selection of work will live here.
-          <br />
-          Projects, experiments, and the
-          <br />
-          thinking behind them.
+          My portfolio is taking shape alongside my studies. Coursework and
+          personal explorations will find their place here as they develop.
         </p>
-      </div>
-      <div className="projects">
-        {projects.map((p) => (
-          <article
-            className={`project ${p.style}`}
-            key={p.id}
-            id={`project-${p.id}`}
-          >
-            <div className="project-visual">
-              <div className="exhibit-top">
-                <span>EXHIBIT / {p.id}</span>
-                <span>PROJECT PREVIEW</span>
-              </div>
-              <div className="exhibit-type" aria-hidden="true">
-                {p.id === '01' ? (
-                  <>
-                    Space for
-                    <br />
-                    <em>something</em>
-                    <br />
-                    meaningful.
-                  </>
-                ) : (
-                  <>
-                    What
-                    <br />
-                    comes
-                    <br />
-                    <span>next?</span>
-                  </>
-                )}
-              </div>
-              <div className="exhibit-bottom">
-                <span>YOUR WORK GOES HERE</span>
-                <span>+</span>
-              </div>
-            </div>
-            <div className="project-caption">
-              <div>
-                <p className="micro">{p.type} · Placeholder</p>
-                <h3>{p.title}</h3>
-              </div>
-              <span className="project-index">/{p.id}</span>
-            </div>
-            <p className="project-description">{p.description}</p>
-            <div className="tags">
-              {p.tags.map((t) => (
-                <span key={t}>{t}</span>
-              ))}
-            </div>
-          </article>
-        ))}
       </div>
     </section>
   );
@@ -131,49 +73,20 @@ export function Capabilities() {
 }
 export function Credentials() {
   return (
-    <>
-      <section className="section quiet" id="achievements">
-        <SectionLabel number="03">ACHIEVEMENTS</SectionLabel>
-        <div className="quiet-content">
-          <h2>Milestones that matter.</h2>
-          <div className="empty-row">
-            <span className="asterisk">✳</span>
-            <div>
-              <h3>The highlights, in time.</h3>
-              <p>
-                Awards, releases, competitions, and meaningful accomplishments
-                will appear here.
-              </p>
-            </div>
-            <span className="pending">TO BE ADDED</span>
+    <section className="section quiet" id="education">
+      <SectionLabel number="01">EDUCATION</SectionLabel>
+      <div className="quiet-content">
+        <h2>Engineering, in progress.</h2>
+        <div className="education-row">
+          <span>01</span>
+          <div>
+            <h3>Politecnico di Milano</h3>
+            <p>Engineering studies</p>
           </div>
+          <span className="pending">CURRENTLY STUDYING</span>
         </div>
-      </section>
-      <section className="section quiet" id="education">
-        <SectionLabel number="04">EDUCATION & CERTIFICATIONS</SectionLabel>
-        <div className="quiet-content">
-          <h2>A foundation to build on.</h2>
-          <div className="education-row">
-            <span>01</span>
-            <div>
-              <h3>Education</h3>
-              <p>Degree, institution, and dates to be added.</p>
-            </div>
-            <span className="pending">—</span>
-          </div>
-          <div className="education-row">
-            <span>02</span>
-            <div>
-              <h3>Certifications</h3>
-              <p>
-                Verified qualifications and issuing organizations to be added.
-              </p>
-            </div>
-            <span className="pending">—</span>
-          </div>
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 export function Trajectory() {
@@ -208,18 +121,18 @@ export function Trajectory() {
 export function About() {
   return (
     <section className="section about" id="about">
-      <SectionLabel number="06">ABOUT</SectionLabel>
+      <SectionLabel number="03">ABOUT</SectionLabel>
       <div className="about-layout">
         <h2>
           Beyond
           <br />
-          <span className="serif">the work.</span>
+          <span className="serif">the studies.</span>
         </h2>
         <div>
           <p className="about-lead">
-            The person behind
+            The person beyond
             <br />
-            the projects.
+            the degree.
           </p>
           <p className="section-description">
             This is where your story belongs: the interests, values, and small
@@ -240,7 +153,7 @@ export function Contact() {
   ];
   return (
     <section className="section contact" id="contact">
-      <SectionLabel number="07">CONTACT</SectionLabel>
+      <SectionLabel number="04">CONTACT</SectionLabel>
       <div className="contact-heading">
         <h2>
           Good things start
