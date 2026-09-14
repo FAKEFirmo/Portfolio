@@ -29,9 +29,13 @@ export default function Home() {
             <span className="tiny-cross">+</span> POLITECNICO DI MILANO
           </p>
           <h1>
-            {profile.name}
-            <span>
-              In the making<span className="period">.</span>
+            <span className="line">
+              <span>{profile.name}</span>
+            </span>
+            <span className="line line-soft">
+              <span>
+                In the making<span className="period">.</span>
+              </span>
             </span>
           </h1>
           <p className="hero-role">{profile.role}</p>
