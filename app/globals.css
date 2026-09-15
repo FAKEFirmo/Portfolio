@@ -1083,7 +1083,7 @@ footer {
 }
 @keyframes rim-light {
   to {
-    opacity: 0.52;
+    opacity: 0.3;
   }
 }
 @keyframes hero-leave {
@@ -1127,7 +1127,7 @@ footer {
     mask-position: center;
     mask-repeat: no-repeat;
     mix-blend-mode: plus-lighter;
-    opacity: 0.22;
+    opacity: 0.12;
     will-change: opacity;
     animation: rim-light 19s var(--ease-smooth) 2.4s infinite alternate;
   }
@@ -1236,16 +1236,6 @@ footer {
 .contact-links a,
 .contact-placeholder {
   transition: color var(--dur-med) var(--ease-out);
-}
-body:after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  pointer-events: none;
-  opacity: 0.035;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")
-    repeat;
 }
 .student-work .work-heading {
   margin-top: 40px;
