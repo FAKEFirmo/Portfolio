@@ -1243,6 +1243,27 @@ footer {
 .student-work .section-description {
   max-width: 365px;
 }
+.lost {
+  min-height: calc(100svh - 120px);
+  padding-top: 150px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+}
+.lost h2 {
+  margin: 28px 0 0;
+}
+.lost .section-description {
+  max-width: 420px;
+}
+.lost-footer {
+  padding: 0 8% 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
 .student-work {
   padding-top: 75px;
   padding-bottom: 85px;
