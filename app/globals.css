@@ -1081,11 +1081,6 @@ footer {
     transform: translateY(7%);
   }
 }
-@keyframes hero-breathe {
-  to {
-    transform: scale(1.045);
-  }
-}
 @keyframes rim-light {
   from {
     transform: translateX(-32%);
@@ -1121,9 +1116,7 @@ footer {
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero-art {
-    animation:
-      hero-art-settle 1.6s var(--ease-out) backwards,
-      hero-breathe 42s var(--ease-smooth) 1.8s infinite alternate;
+    animation: hero-art-settle 1.6s var(--ease-out) backwards;
   }
   .hero-art:after {
     content: '';
@@ -1138,6 +1131,7 @@ footer {
     );
     mix-blend-mode: color-dodge;
     opacity: 0.28;
+    will-change: transform;
     animation: rim-light 26s var(--ease-smooth) 2.4s infinite alternate;
   }
   .hero .eyebrow {
