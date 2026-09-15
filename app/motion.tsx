@@ -31,14 +31,6 @@ export default function Motion() {
           )
         : null;
     if (heroEnd) stick?.observe(heroEnd);
-    const hero = document.querySelector('.hero');
-    const idle = hero
-      ? new IntersectionObserver(
-          ([entry]) => hero.classList.toggle('is-idle', !entry.isIntersecting),
-          { threshold: 0 },
-        )
-      : null;
-    if (hero) idle?.observe(hero);
     const fine = window.matchMedia('(pointer: fine)').matches;
     let frame = 0;
     let pending: PointerEvent | null = null;
@@ -95,7 +87,6 @@ export default function Motion() {
     return () => {
       reveal.disconnect();
       stick?.disconnect();
-      idle?.disconnect();
       window.removeEventListener('pointermove', onMove);
       window.removeEventListener('scroll', forget);
       window.removeEventListener('resize', forget);

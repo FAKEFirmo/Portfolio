@@ -1064,7 +1064,6 @@ footer {
 @keyframes hero-art-settle {
   from {
     opacity: 0;
-    transform: scale(1.07);
   }
 }
 @keyframes hero-note-in {
@@ -1079,8 +1078,11 @@ footer {
   }
 }
 @keyframes rim-light {
+  from {
+    opacity: 0.16;
+  }
   to {
-    opacity: 0.3;
+    opacity: 0.42;
   }
 }
 @keyframes hero-leave {
@@ -1095,17 +1097,6 @@ footer {
   }
   to {
     transform: translateY(3%);
-  }
-}
-@keyframes dot-breathe {
-  50% {
-    opacity: 0.35;
-    transform: scale(0.82);
-  }
-}
-@keyframes scroll-cue {
-  50% {
-    transform: translateY(4px);
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -1124,12 +1115,7 @@ footer {
     mask-position: center;
     mask-repeat: no-repeat;
     mix-blend-mode: plus-lighter;
-    opacity: 0.12;
-    will-change: opacity;
-    animation: rim-light 19s var(--ease-smooth) 2.4s infinite alternate;
-  }
-  .hero.is-idle .hero-art:after {
-    animation-play-state: paused;
+    opacity: 0.2;
   }
   .hero .eyebrow {
     animation: hero-fade var(--dur-slow) var(--ease-out) 160ms backwards;
@@ -1158,27 +1144,18 @@ footer {
   .hero-bottom {
     animation: hero-fade var(--dur-slow) var(--ease-out) 940ms backwards;
   }
-  .status-dot {
-    animation: dot-breathe 3.4s var(--ease-smooth) 1.4s infinite;
-  }
-  .hero-bottom a span {
-    display: inline-block;
-    animation: scroll-cue 2.6s var(--ease-smooth) 2s infinite;
-  }
 }
 @supports (animation-timeline: scroll()) {
   @media (prefers-reduced-motion: no-preference) {
     .hero-art:before {
       animation: hero-drift linear both;
-      animation-timeline: scroll();
+      animation-timeline: scroll(root);
       animation-range: 0 100vh;
     }
     .hero-art:after {
-      animation:
-        rim-light 19s var(--ease-smooth) 2.4s infinite alternate,
-        hero-drift linear both;
-      animation-timeline: auto, scroll();
-      animation-range: normal, 0 100vh;
+      animation: rim-light linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 90vh;
     }
     .hero-content {
       animation: hero-leave linear both;
