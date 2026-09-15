@@ -31,10 +31,30 @@ export default function Motion() {
           )
         : null;
     if (heroEnd) stick?.observe(heroEnd);
+    const hero = document.querySelector('.hero');
+    const idle = hero
+      ? new IntersectionObserver(
+          ([entry]) => hero.classList.toggle('is-idle', !entry.isIntersecting),
+          { threshold: 0 },
+        )
+      : null;
+    if (hero) idle?.observe(hero);
     const fine = window.matchMedia('(pointer: fine)').matches;
     let frame = 0;
     let pending: PointerEvent | null = null;
     let lit: HTMLElement | null = null;
+    let boxes = new WeakMap<HTMLElement, DOMRect>();
+    const boxOf = (el: HTMLElement) => {
+      let box = boxes.get(el);
+      if (!box) {
+        box = el.getBoundingClientRect();
+        boxes.set(el, box);
+      }
+      return box;
+    };
+    const forget = () => {
+      boxes = new WeakMap();
+    };
     const clear = (el: HTMLElement) => {
       el.style.removeProperty('--mx');
       el.style.removeProperty('--my');
@@ -52,7 +72,7 @@ export default function Motion() {
         lit = null;
       }
       if (!target) return;
-      const box = target.getBoundingClientRect();
+      const box = boxOf(target);
       const x = (event.clientX - box.left) / box.width;
       const y = (event.clientY - box.top) / box.height;
       target.style.setProperty('--gx', `${x * 100}%`);
@@ -67,11 +87,18 @@ export default function Motion() {
       pending = event;
       if (!frame) frame = requestAnimationFrame(apply);
     };
-    if (fine) window.addEventListener('pointermove', onMove, { passive: true });
+    if (fine) {
+      window.addEventListener('pointermove', onMove, { passive: true });
+      window.addEventListener('scroll', forget, { passive: true });
+      window.addEventListener('resize', forget);
+    }
     return () => {
       reveal.disconnect();
       stick?.disconnect();
+      idle?.disconnect();
       window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('scroll', forget);
+      window.removeEventListener('resize', forget);
       if (frame) cancelAnimationFrame(frame);
     };
   }, []);

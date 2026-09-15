@@ -1,11 +1,9 @@
-import GlassOptics from './glass-optics';
 import { profile } from './content';
 import { Work, Credentials, About, Contact } from './sections';
 import Motion from './motion';
 export default function Home() {
   return (
     <main>
-      <GlassOptics />
       <a className="skip" href="#work">
         Skip to studies
       </a>
