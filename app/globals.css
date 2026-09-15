@@ -747,11 +747,18 @@ h2 {
 .contact:before {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
   z-index: -1;
   background:
     linear-gradient(#0c0c0ce0, #0c0c0cbb),
     url('/images/amber.webp') center 70%/cover;
+}
+main {
+  overflow-x: clip;
 }
 .contact-heading {
   display: flex;
@@ -1071,6 +1078,11 @@ footer {
     transform: translateY(7%);
   }
 }
+@keyframes hero-breathe {
+  to {
+    transform: scale(1.045);
+  }
+}
 @keyframes hero-leave {
   to {
     opacity: 0.12;
@@ -1098,7 +1110,9 @@ footer {
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero-art {
-    animation: hero-art-settle 1.6s var(--ease-out) backwards;
+    animation:
+      hero-art-settle 1.6s var(--ease-out) backwards,
+      hero-breathe 42s var(--ease-smooth) 1.8s infinite alternate;
   }
   .hero .eyebrow {
     animation: hero-fade var(--dur-slow) var(--ease-out) 160ms backwards;
@@ -1148,7 +1162,8 @@ footer {
       animation-range: 0 75vh;
     }
     .contact:before {
-      inset: -5% 0;
+      top: -5%;
+      bottom: -5%;
       animation: contact-drift linear both;
       animation-timeline: view();
       animation-range: entry 0% exit 100%;
