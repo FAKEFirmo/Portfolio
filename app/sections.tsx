@@ -88,7 +88,7 @@ export function Credentials() {
           <span>01</span>
           <div>
             <h3>Politecnico di Milano</h3>
-            <p>Engineering studies</p>
+            <p>Engineering studies - Egineering of Computing Systems</p>
           </div>
           <span className="pending">CURRENTLY STUDYING</span>
         </div>
@@ -140,16 +140,21 @@ export function About() {
         </h2>
         <div>
           <p className="about-lead" data-reveal>
-            The person beyond
+            Who am I beyond
             <br />
             the degree.
           </p>
           <p className="section-description" data-reveal>
-            This is where your story belongs: the interests, values, and small
-            obsessions that shape how you see the world.
+            I'm someone whose always open to learn more, that is probably why I love
+            interacting with different people from all around the world. It teaches you
+            how different cultures approach things uniquely.
+            Navigating multiple viewpoints enhances my ability to analyze situations 
+            from various angles, a skill directly applicable to engineering.
+            My interests outside of engineering are plenty, traveling, music, books and videogames
+            are up there.
           </p>
           <p className="micro" data-reveal>
-            PERSONAL BIO TO BE ADDED
+            BECOME WHO YOU ARE - Nietzsche, Thus Spoke Zarathustra
           </p>
         </div>
       </div>
