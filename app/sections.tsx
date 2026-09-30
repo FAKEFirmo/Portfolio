@@ -219,7 +219,7 @@ export function About() {
             the degree.
           </p>
           <p className="section-description" data-reveal>
-            I'm someone whose always open to learn more, that is probably why I love
+            I'm someone who's always open to learn more, that is probably why I love
             interacting with different people from all around the world. It teaches you
             how different cultures approach things uniquely.
             Navigating multiple viewpoints enhances my ability to analyze situations 
