@@ -77,7 +77,7 @@ export function Capabilities() {
 export function Credentials() {
   return (
     <section className="section quiet" id="education" data-rule>
-      <SectionLabel number="01">EDUCATION</SectionLabel>
+      <SectionLabel number="01">EDUCATION / ACHIEVEMENTS</SectionLabel>
       <div className="quiet-content">
         <h2 data-reveal="lines">
           <span className="line">
@@ -88,12 +88,86 @@ export function Credentials() {
           <span>01</span>
           <div>
             <h3>Politecnico di Milano</h3>
-            <p>Engineering studies - Egineering of Computing Systems</p>
+            <p>Engineering studies - Engineering of Computing Systems</p>
           </div>
           <span className="pending">CURRENTLY STUDYING</span>
         </div>
+        <div className="education-row" data-reveal>
+          <span>02</span>
+          <div>
+            <h3>MakersLab Robotics Olympiad</h3>
+            <p>
+              Winner in robotic arm programming, two years in a row.
+            </p>
+          </div>
+          <span className="pending">2023/24 · 2024/25</span>
+          <ArmBlueprint />
+        </div>
       </div>
     </section>
+  );
+}
+function ArmBlueprint() {
+  return (
+    <figure className="arm-card">
+      <div className="arm-stage" aria-hidden="true">
+        <svg className="arm-model" viewBox="0 0 320 220" fill="none" strokeLinecap="round">
+          <g className="arm-guides">
+            <path d="M20 199H300" />
+            <path d="M110 150L150 81L237 104" strokeDasharray="6 3 1 3" />
+            <path d="M76 150A34 34 0 0 1 144 150" strokeDasharray="2 4" />
+            <path d="M282 199V81M277 199H287M277 81H287" />
+            <path d="M150 81H270M237 104V60" strokeDasharray="2 4" />
+          </g>
+          <g className="arm-body">
+            <rect x="60" y="186" width="100" height="12" rx="2" />
+            <path d="M78 186L90 166H130L142 186" />
+            <circle cx="70" cy="192" r="2" />
+            <circle cx="150" cy="192" r="2" />
+            <g className="arm-j1">
+              <g transform="translate(110 150) rotate(-60)">
+                <rect y="-13" width="80" height="26" rx="13" />
+                <path d="M24 -6H56M24 6H56" />
+              </g>
+              <g className="arm-j2">
+                <g transform="translate(150 81) rotate(15)">
+                  <rect y="-10" width="87" height="20" rx="10" />
+                  <path d="M20 0H66" />
+                </g>
+                <g className="arm-j3">
+                  <g transform="translate(237 104) rotate(15)">
+                    <rect x="8" y="-9" width="10" height="18" rx="2" />
+                    <path className="arm-jaw-top" d="M18 -6L32 -11L42 -5" />
+                    <path className="arm-jaw-bottom" d="M18 6L32 11L42 5" />
+                  </g>
+                  <circle cx="237" cy="104" r="10" />
+                  <circle className="arm-joint" cx="237" cy="104" r="2.5" />
+                </g>
+                <circle cx="150" cy="81" r="16" />
+                <circle cx="150" cy="81" r="8" />
+                <circle className="arm-joint" cx="150" cy="81" r="3" />
+              </g>
+              <circle cx="110" cy="150" r="20" />
+              <circle cx="110" cy="150" r="12" />
+              <circle className="arm-joint" cx="110" cy="150" r="3" />
+            </g>
+          </g>
+          <g className="arm-labels">
+            <text x="58" y="146">J1</text>
+            <text x="122" y="62">J2</text>
+            <text x="244" y="92">J3</text>
+            <text x="290" y="144">H</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>
+        <p>Programmed with Arduino.</p>
+        <span className="micro">
+          <span>FIG. 02 — ROBOTIC ARM</span>
+          <span>SIDE ELEVATION</span>
+        </span>
+      </figcaption>
+    </figure>
   );
 }
 export function Trajectory() {

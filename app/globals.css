@@ -1256,3 +1256,176 @@ footer {
     margin-top: 30px;
   }
 }
+.education-row {
+  position: relative;
+}
+.arm-card {
+  position: absolute;
+  left: 58px;
+  bottom: calc(100% - 10px);
+  z-index: 5;
+  width: 300px;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #ffffff1f;
+  border-radius: 16px;
+  background: #141312;
+  box-shadow:
+    inset 0 1px 0 #ffffff1a,
+    0 18px 50px #00000080;
+  color: #d6b18c;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  transform-origin: 24px 100%;
+  transition:
+    opacity 160ms var(--ease-out),
+    transform 160ms var(--ease-out);
+}
+.arm-stage {
+  perspective: 700px;
+  border-radius: 8px;
+  background:
+    linear-gradient(#ffffff09 1px, transparent 1px) 0 0 / 16px 16px,
+    linear-gradient(90deg, #ffffff09 1px, transparent 1px) 0 0 / 16px 16px;
+}
+.arm-model {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.arm-model :is(.arm-j1, .arm-j2, .arm-j3, .arm-jaw-top, .arm-jaw-bottom) {
+  transform-box: view-box;
+}
+.arm-guides {
+  stroke: #9f988c;
+  stroke-opacity: 0.45;
+  stroke-width: 0.75;
+}
+.arm-body {
+  stroke: currentColor;
+  stroke-width: 1.1;
+}
+.arm-joint {
+  fill: currentColor;
+  stroke: none;
+}
+.arm-labels {
+  fill: #9f988c;
+  font: 8px var(--font-geist-mono), monospace;
+  letter-spacing: 0.08em;
+}
+.arm-j1 {
+  transform-origin: 110px 150px;
+}
+.arm-j2 {
+  transform-origin: 150px 81px;
+}
+.arm-j3 {
+  transform-origin: 237px 104px;
+}
+.arm-jaw-top {
+  transform-origin: 18px -6px;
+}
+.arm-jaw-bottom {
+  transform-origin: 18px 6px;
+}
+.arm-card figcaption {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ffffff14;
+}
+.arm-card figcaption p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #d4d0c9;
+}
+.arm-card figcaption .micro {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+}
+@media (hover: hover) {
+  .education-row:hover .arm-card {
+    opacity: 1;
+    transform: none;
+    transition-duration: 240ms;
+    transition-delay: 60ms;
+  }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  /* Folded, turned-away pose; hovering swings it round and unfolds it.
+     Resets only after the card has faded out, so closing never plays it backwards. */
+  .arm-model {
+    transform: rotateY(-70deg);
+    transition: transform 0s 180ms;
+  }
+  .arm-j1 {
+    transform: rotate(-30deg);
+  }
+  .arm-j2 {
+    transform: rotate(65deg);
+  }
+  .arm-j3 {
+    transform: rotate(-45deg);
+  }
+  .arm-jaw-top {
+    transform: rotate(-22deg);
+  }
+  .arm-jaw-bottom {
+    transform: rotate(22deg);
+  }
+  .arm-j1,
+  .arm-j2,
+  .arm-j3,
+  .arm-jaw-top,
+  .arm-jaw-bottom,
+  .arm-guides,
+  .arm-labels,
+  .arm-card figcaption {
+    transition:
+      transform 0s 180ms,
+      opacity 0s 180ms;
+  }
+  .arm-guides,
+  .arm-labels,
+  .arm-card figcaption {
+    opacity: 0;
+  }
+  .education-row:hover
+    :is(.arm-model, .arm-j1, .arm-j2, .arm-j3, .arm-jaw-top, .arm-jaw-bottom, .arm-guides, .arm-labels, figcaption) {
+    transform: none;
+    opacity: 1;
+  }
+  .education-row:hover .arm-model {
+    transition: transform 900ms var(--ease-out) 60ms;
+  }
+  .education-row:hover .arm-j1 {
+    transition: transform 700ms var(--ease-out) 200ms;
+  }
+  .education-row:hover .arm-j2 {
+    transition: transform 700ms var(--ease-out) 300ms;
+  }
+  .education-row:hover .arm-j3 {
+    transition: transform 600ms var(--ease-out) 420ms;
+  }
+  .education-row:hover :is(.arm-jaw-top, .arm-jaw-bottom) {
+    transition: transform 260ms var(--ease-out) 900ms;
+  }
+  .education-row:hover :is(.arm-guides, .arm-labels) {
+    transition: opacity 400ms var(--ease-out) 750ms;
+  }
+  .education-row:hover .arm-card figcaption {
+    transition: opacity 300ms var(--ease-out) 200ms;
+  }
+}
+@media (hover: none) {
+  .arm-card {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .arm-card {
+    transform: none;
+  }
+}
